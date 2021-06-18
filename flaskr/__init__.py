@@ -1,7 +1,7 @@
 import os
-
-from flask import Flask
-
+from flask import render_template
+from flask import Flask, flash, request, redirect, url_for
+from werkzeug.utils import secure_filename
 
 def create_app(test_config=None):
     # create and configure the app
@@ -24,9 +24,11 @@ def create_app(test_config=None):
     except OSError:
         pass
 
-    # a simple page that says hello
-    @app.route('/findlandmark')
-    def hello():
-        return 'Hello, landmark found???'
+    @app.route('/')
+    def render():
+        return render_template(
+            "discovar.html"
+        )
+
 
     return app
