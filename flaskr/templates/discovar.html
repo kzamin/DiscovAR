@@ -1,21 +1,23 @@
 <!DOCTYPE html>
 <html>
+
+<head>
+    <meta charset="utf-8" />
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='static.css')}}" />
-    <head>
-        <meta charset="utf-8" />
-        <title>DiscovAR</title>
-    </head>
-    <body>
-        
-        <div style="text-align: center;">
-            <h1 id="title">DiscovAR</h1>
-        </div>
+    <title>DiscovAR</title>
+</head>
+<body>
 
-        <form>
-            <p> Select a photo of the landmark. </p>
-            <input type="file" id="userInput" name="userInput"> 
-            <button class="submission"> Submit </button> 
-        </form>
+    <div style="text-align: center;">
+        <h1 id="title">DiscovAR</h1>
+    </div>
 
-    </body>
+    <form>
+        <p> Select a photo of the landmark. </p>
+        <input type="file" id="userInput" name="userInput">
+        <button class="submission"> Submit </button>
+    </form>
+
+</body>
+
 </html>
