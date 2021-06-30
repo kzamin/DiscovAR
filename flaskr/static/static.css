@@ -1,32 +1,71 @@
-@import url('https://fonts.googleapis.com/css?family=Roboto+Condensed');
+@import url('https://fonts.googleapis.com/css?family=Roboto+Condensed%27');
 
 #title {
     padding-top: 20px;
     margin: 0;
     padding-bottom: 60px;
-    font-family: 'Roboto Condensed', sans-serif;
+    font-family: "SF Pro Text","SF Pro Icons","Helvetica Neue","Helvetica","Arial",sans-serif;
     font-size: 3.75em;
-    text-decoration: underline;
 }
 
-button {
-    width: 8em;
-    height: 3em;
-    border-radius: 10%;
-    background-color: brown;
-    white-space: normal !important;
-    word-wrap: break-word;
-    appearance: none;
-    font-size: 1em;
-    font-weight: 300;
-    line-height: 1;
-    text-decoration: none;
-    text-transform: uppercase;
-    font-family: 'Roboto Condensed', sans-serif;
-    color: black;
+.text {
+    font-family: "Arial";
+    padding-left: 300px;
 }
 
-.submission {
-    margin-left: 12em;
-    color:burlywood
+.center {
+    margin: auto;
+    width: 50%;
+    padding: 10px;
+}
+
+
+.uploadButton {
+    box-shadow: 0px 10px 14px -7px #276873;
+    background:linear-gradient(to bottom, #599bb3 5%, #408c99 100%);
+    background-color:#599bb3;
+    border-radius:8px;
+    display:inline-block;
+    cursor:pointer;
+    color:#ffffff;
+    font-family:Arial;
+    font-size:20px;
+    font-weight:bold;
+    padding:13px 32px;
+    text-decoration:none;
+    text-shadow:0px 1px 0px #3d768a;
+    margin-left: 200px;
+    padding-left: 80px;
+}
+.uploadButton:hover {
+    background:linear-gradient(to bottom, #408c99 5%, #599bb3 100%);
+    background-color:#408c99;
+}
+.uploadButton:active {
+    position:relative;
+    top:1px;
+}
+
+.submitButton {
+    background:linear-gradient(to bottom, #44c767 5%, #5cbf2a 100%);
+    background-color:#44c767;
+    border-radius:28px;
+    border:1px solid #18ab29;
+    display:inline-block;
+    cursor:pointer;
+    color:#ffffff;
+    font-family:Arial;
+    font-size:17px;
+    padding:16px 31px;
+    text-decoration:none;
+    text-shadow:0px 1px 0px #2f6627;
+    margin-left: 360px;
+}
+.myButton:hover {
+    background:linear-gradient(to bottom, #5cbf2a 5%, #44c767 100%);
+    background-color:#5cbf2a;
+}
+.myButton:active {
+    position:relative;
+    top:1px;
 }
