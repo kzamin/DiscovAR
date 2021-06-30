@@ -2,6 +2,8 @@
 
   Identify and learn more about the world's most famous landmarks at the snap of a camera. Also, take them around with you in your pocket through AR. 
   
+# Setup
+
 # Inspiration
 
   Due to the Covid-19 pandemic, many people are stuck at home, trying to entertain themselves. Some wanted to go out into the world to sightsee many wonders and  famous monuments but are not able to due to fear of risking both their loved ones and themselves with this virus. This application is a solution to that problem.
