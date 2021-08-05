@@ -1,6 +1,6 @@
 import os
-from flask import render_template
-from flask import Flask, flash, request, redirect, url_for
+import re
+from flask import Flask, flash, render_template, request, redirect, url_for
 from werkzeug.utils import secure_filename
 
 def create_app(test_config=None):
@@ -26,6 +26,14 @@ def create_app(test_config=None):
 
     @app.route('/')
     def render():
+        if request.files:
+
+            image = request.files["userInput"]
+
+            image.save(os.path.join("/DiscovAR/flaskr/uploads"), image.filename)
+
+            return redirect(request.url)
+
         return render_template(
             "discovar.html"
         )
