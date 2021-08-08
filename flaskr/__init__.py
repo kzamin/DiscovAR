@@ -24,15 +24,17 @@ def create_app(test_config=None):
     except OSError:
         pass
 
-    @app.route('/')
+    @app.route('/', methods=["GET", "POST"])
     def render():
-        if request.files:
 
-            image = request.files["userInput"]
+        if request.method == "POST":
+            if request.files:
 
-            image.save(os.path.join("/DiscovAR/flaskr/uploads"), image.filename)
+                image = request.files["userInput"]
 
-            return redirect(request.url)
+                image.save(os.path.join(os.getcwd(), image.filename))
+
+                return redirect(request.url)
 
         return render_template(
             "discovar.html"
