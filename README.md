@@ -14,7 +14,7 @@ The application takes an image of a famous place like Space Needle, Empire State
 
 # How we built it
 
-For the backend of this application, we used python to have a landscape detection algorithm to figure out if the image (jpg, png, and jpeg) contains a famous monument. We also used javascript for the website to send the image to. We used Bubble IO to create a design for the website while using Echo AR to create a 3D model of the famous monuments.  
+For the backend of this application, we used python to have a landscape detection algorithm to figure out if the image (jpg, png, and jpeg) contains a famous monument. We also used javascript for the website to send the image to. 
 
 # Challenges we ran into
 
@@ -27,7 +27,4 @@ When we were designing the layout of the application, we thought we could simply
 # What we learned
 We learned how to collaborate with each other online and how to connect different technologies/software together. We also learned how to problem solve as a group and pivot when our original plans to turn out to not work out the way we initially envisioned. Lastly, we learned how to maintain optimism throughout the ups and downs of projects like these.
 
-# What's next for AR World
-
-We want to expand the models available for different landmarks, and we want to build an actual so people can distinguish landmarks in real time.
 
