@@ -4,10 +4,7 @@ from google.cloud import vision
 import pandas
 import wikipedia
 
-os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = "GOOGLE_AUTH_CODE"  # put your actual AUTH.json here
-
-# file_name = input("Enter file name:")
-# image_path = 'Images/' + file_name
+os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = "GOOGLE_AUTHCODE"  # put your actual AUTH.json here
 
 def detect_landmarks(path):
     client = vision.ImageAnnotatorClient()
@@ -28,22 +25,16 @@ def detect_landmarks(path):
             'https://cloud.google.com/apis/design/errors'.format(
                 response.error.message))
 
-    print(landmark.description, wikipedia.summary(landmark.description))
-    result = ["hello", "world"]
-    result = [landmark.description, wikipedia.summary(landmark.description)]
-    return result
-    
-# landmark = detect_landmarks(image_path)
-# print(landmark.description)
-#
-# valid = {"Pyramid": "https://go.echoar.xyz/yo8o",
-#          "Space Needle": "https://go.echoar.xyz/H98t",
-#          "Stonehenge":"https://console.echoar.xyz/samples/webar-chrome/snowy-firefly-0544_1602992125554/index_snowy-firefly-0544_1602992125554.html",
-#          "Eiffel Tower": "https://console.echoar.xyz/samples/webar-chrome/snowy-firefly-0544_1602992178975/index_snowy-firefly-0544_1602992178975.html",
-#          "Taj Mahal": "https://console.echoar.xyz/samples/webar-chrome/snowy-firefly-0544_1602992216830/index_snowy-firefly-0544_1602992216830.html",
-#          "New York City": "https://console.echoar.xyz/samples/webar-chrome/snowy-firefly-0544_1602992277351/index_snowy-firefly-0544_1602992277351.html",
-#          "Colosseum": "https://console.echoar.xyz/samples/webar-chrome/snowy-firefly-0544_1602992324002/index_snowy-firefly-0544_1602992324002.html"}
-#
-# print("Wikipedia Summary")
-# print(wikipedia.summary(landmark.description))
-# print(valid.get(landmark.description))
+    if(landmark.description.lower() in valid):
+        ar = valid[(landmark.description.lower())]
+    else:
+        ar = "https://go.echoar.xyz/yo8o"
+
+    return [landmark.description, wikipedia.summary(landmark.description), ar]
+
+valid = {"pyramid": "https://go.echoar.xyz/yo8o",
+         "space needle": "https://go.echoar.xyz/H98t",
+         "taj mahal": "https://go.echoar.xyz/ngvs",
+         "stonehenge": "https://go.echoar.xyz/RLdA",
+         "eiffel tower": "https://go.echoar.xyz/1SMH"
+        }
