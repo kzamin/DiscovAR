@@ -1,9 +1,12 @@
 import os
-import re
-from flask import Flask, flash, render_template, request, redirect, url_for
+from flask import render_template
+from flask import Flask, flash, request, redirect, url_for
+from .app import *
+
 from werkzeug.utils import secure_filename
 
 def create_app(test_config=None):
+
     # create and configure the app
     app = Flask(__name__, instance_relative_config=True)
     app.config.from_mapping(
@@ -24,20 +27,23 @@ def create_app(test_config=None):
     except OSError:
         pass
 
-    @app.route('/', methods=["GET", "POST"])
+    @app.route('/')
     def render():
-
-        if request.method == "POST":
-            if request.files:
-
-                image = request.files["userInput"]
-
-                image.save(os.path.join(os.getcwd(), image.filename))
-
-                return redirect(request.url)
-
         return render_template(
             "discovar.html"
         )
+
+
+    @app.route("/upload-image", methods=["GET", "POST"])
+    def upload_image():
+        if request.method == "POST":
+            if request.files:
+                image = request.files["userInput"]
+                image.save(os.path.join(os.getcwd(), image.filename))
+                global result
+                result = detect_landmarks(image.filename)
+                return redirect(request.url)
+
+        return render_template("upload_image.html", landmark=result[0], summary=result[1])
 
     return app
