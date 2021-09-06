@@ -44,6 +44,6 @@ def create_app(test_config=None):
                 result = detect_landmarks(image.filename)
                 return redirect(request.url)
 
-        return render_template("upload_image.html", landmark=result[0], summary=result[1])
+        return render_template("upload_image.html", landmark=result[0], summary=result[1], link=result[2])
 
     return app
