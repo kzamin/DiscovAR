@@ -1,42 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Uploaded File</title>
-</head>
-<body>
-    <div class="center">
-
-        {% if landmark %}
-            <h1>Landmark</h1>
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" type="text/css" href="../static/static.css"/>
+        <title>Uploaded File</title>
+    </head>
+    
+    <body>
+        <div style="text-align: center;">
+            <h1 id="title" class="landmarkText">DiscovAR</h1>
             <hr>
-            <h3>{{ landmark }}</h3>
-            <a href="{{ link }}">{{ landmark }}</a>
-        {% else %}
-            <h1>Something went wrong</h1>
-        {% endif %}
-    </div>
-    <br>
-    <br>
-    <div class="center">
-        {% if summary %}
-            <h1>About</h1>
-            <hr>
-            <h3>{{ summary }}</h3>
-        {% else %}
-            <h1>Something went wrong</h1>
-        {% endif %}
-    </div>
-
-    <div class="center">
-        {% if link %}
-            <h1>Link</h1>
-            <hr>
-            <a href="{{ link }}">AR Model Link</a>
-        {% else %}
-            <h1>Something went wrong</h1>
-        {% endif %}
-    </div>
-
-</body>
+        </div>
+        <br>
+        <br>
+        
+        <div class="center">
+            {% if landmark %}
+                <h1 class="landmarkText">{{ landmark }}</h1>
+            {% else %}
+                <h1>Something went wrong</h1>
+            {% endif %}
+        </div>
+        <br>
+        
+        <div class="center">
+            {% if summary %}
+                <h3 class="descriptionText">{{ summary }}</h3>
+            {% else %}
+                <h1>Something went wrong</h1>
+            {% endif %}
+        </div>
+        <br>
+        
+        <div class="center" style="text-align:center">
+            {% if link %}
+                <a href="{{ link }}" >{{ landmark }} AR Model Link</a>
+            {% else %}
+                <h1>Something went wrong</h1>
+            {% endif %}
+        </div>
+    </body>
 </html>
