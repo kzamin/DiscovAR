@@ -33,7 +33,6 @@ def create_app(test_config=None):
             "discovar.html"
         )
 
-
     @app.route("/upload-image", methods=["GET", "POST"])
     def upload_image():
         if request.method == "POST":
@@ -43,7 +42,7 @@ def create_app(test_config=None):
                 global result
                 result = detect_landmarks(image.filename)
                 return redirect(request.url)
-
         return render_template("upload_image.html", landmark=result[0], summary=result[1], link=result[2])
 
     return app
+
