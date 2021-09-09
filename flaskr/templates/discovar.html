@@ -1,28 +1,21 @@
 <!DOCTYPE html>
 <html>
-
-<head>
-    <meta charset="utf-8" />
-    <link rel="stylesheet" type="text/css" href="../static/static.css"/>
-    <title>DiscovAR</title>
-</head>
-<body>
-
-<div style="text-align: center;">
-    <h1 id="title">DiscovAR</h1>
-    <hr>
-</div>
-
-<div class="center">
-
-  <form action="/upload-image" method="POST" enctype="multipart/form-data">
-        <p class="text"> Select a photo of the landmark. </p>
-        <input type="file" id="userInput" name="userInput" class="uploadButton"> <br><br><br>
-        <button class="submitButton"> Submit </button>
-    </form>
-
-</div>
-
-
-</body>
+    <head>
+        <meta charset="utf-8" />
+        <link rel="stylesheet" type="text/css" href="../static/static.css"/>
+        <title>DiscovAR</title>
+    </head>
+    <body>
+        <div style="text-align: center;">
+            <h1 id="title" class="landmarkText">DiscovAR</h1>
+            <hr>
+        </div>
+        <div class="center">
+            <form action="/upload-image" method="POST" enctype="multipart/form-data">
+                <p class="text"> Select a photo of the landmark. </p>
+                <input type="file" id="userInput" name="userInput" class="uploadButton"> <br><br><br>
+                <button class="submitButton"> Submit </button>
+            </form>
+        </div>
+    </body>
 </html>
